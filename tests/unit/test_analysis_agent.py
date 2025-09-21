@@ -1,5 +1,7 @@
-import pytest
+
 from src.multiagent.agents.analysis_agent import analyze
+
+
 
 def test_analyze_returns_expected_structure():
     docs = ["AI используется в IDS", "False positive могут мешать работе"]

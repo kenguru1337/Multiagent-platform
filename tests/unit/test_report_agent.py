@@ -1,5 +1,7 @@
 from src.multiagent.agents.report_agent import generate_report
 
+
+
 def test_generate_report_contains_keywords():
     analysis_result = {
         "facts": ["AI используется в IDS"],

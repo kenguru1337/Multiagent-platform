@@ -4,6 +4,8 @@ logging_conf.py — настройка логирования.
 
 import logging
 
+
+
 def setup_logging(level="INFO"):
     logging.basicConfig(
         level=getattr(logging, level),
@@ -11,6 +13,8 @@ def setup_logging(level="INFO"):
     )
     logger = logging.getLogger("multiagent")
     return logger
+
+
 
 # Создаём логгер по умолчанию
 logger = setup_logging()
