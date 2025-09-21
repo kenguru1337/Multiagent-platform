@@ -11,7 +11,10 @@ def test_health_endpoint():
 
 
 def test_process_endpoint():
-    response = client.post("/process", json={"query": "AI в кибербезопасности"})
+    response = client.post(
+        "/process",
+        json={"query": "AI в кибербезопасности"}
+    )
     assert response.status_code == 200
 
     body = response.json()
