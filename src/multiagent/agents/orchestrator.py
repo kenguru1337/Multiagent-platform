@@ -3,7 +3,6 @@ from .analysis_agent import analyze
 from .report_agent import generate_report
 
 
-
 def run_pipeline(query: str):
     """
     Оркестратор связывает работу агентов.

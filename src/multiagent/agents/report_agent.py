@@ -1,3 +1,5 @@
+
+
 def generate_report(analysis_result):
     """
     Генерация текстового отчёта на основе анализа.

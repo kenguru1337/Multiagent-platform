@@ -7,7 +7,6 @@ class QueryRequest(BaseModel):
     query: str
 
 
-
 class QueryResponse(BaseModel):
     query: str
     report: str

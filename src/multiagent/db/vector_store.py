@@ -4,7 +4,6 @@ vector_store.py — модуль для хранения и поиска век�
 """
 
 
-
 class VectorStore:
     def __init__(self):
         self.vectors = []
@@ -15,7 +14,6 @@ class VectorStore:
     def search(self, query_embedding: list, top_k: int = 3):
         # Пока возвращаем все сохранённые тексты
         return [text for text, _ in self.vectors][:top_k]
-
 
 
 # Глобальный объект (как singleton)
