@@ -1,5 +1,5 @@
 
-from src.multiagent.agents.search_agent import search
+from multiagent.agents.search_agent import search
 
 
 def test_search_returns_documents():

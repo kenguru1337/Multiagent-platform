@@ -1,5 +1,5 @@
 
-from src.multiagent.agents.analysis_agent import analyze
+from multiagent.agents.analysis_agent import analyze
 
 
 def test_analyze_returns_expected_structure():
