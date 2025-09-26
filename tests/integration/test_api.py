@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.multiagent.api.main import app
+from multiagent.api.main import app
 
 client = TestClient(app)
 
