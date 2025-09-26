@@ -35,4 +35,4 @@ jobs:
         pip-audit || true
 
     - name: Run tests
-      run: pytest tests --maxfail=1 --disable-warnings -q
+      run: PYTHONPATH=src pytest tests --maxfail=1 --disable-warnings -q
