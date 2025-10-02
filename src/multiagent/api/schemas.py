@@ -1,5 +1,6 @@
+# src/multiagent/api/schemas.py
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List
 
 
 class QueryRequest(BaseModel):
@@ -9,5 +10,5 @@ class QueryRequest(BaseModel):
 class QueryResponse(BaseModel):
     query: str
     report: str
-    insights: Dict[str, List[str]]
+    insights: List[str]
     confidence: float

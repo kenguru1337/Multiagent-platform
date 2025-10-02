@@ -1,17 +1,12 @@
+# src/multiagent/agents/analysis_agent.py
+from src.multiagent.utils.llm import llm
 
 
-def analyze(documents):
-    """
-    Базовый анализ документов.
-    На данном этапе просто выделяем факты и риски.
-    """
-    facts = []
-    risks = []
+def analyze(query: str) -> dict:
+    """Анализ запроса через LLM."""
+    response = llm.ask(f"Проанализируй запрос и дай развернутый ответ: {query}")
 
-    for doc in documents:
-        facts.append(doc)
-        if "False positive" in doc:
-            risks.append(doc)
-
-    confidence = 0.9
-    return {"facts": facts, "risks": risks, "confidence": confidence}
+    return {
+        "query": query,
+        "analysis": response
+    }

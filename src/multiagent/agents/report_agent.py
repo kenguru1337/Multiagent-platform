@@ -1,17 +1,9 @@
-
-
-def generate_report(analysis_result):
-    """
-    Генерация текстового отчёта на основе анализа.
-    """
-    facts = analysis_result["facts"]
-    risks = analysis_result["risks"]
-
-    report = "Отчёт по запросу:\n"
-    report += "- Факты:\n" + "\n".join(f"- {f}" for f in facts) + "\n"
-
-    if risks:
-        report += "- Риски:\n" + "\n".join(f"- {r}" for r in risks) + "\n"
-
-    report += f"Уверенность анализа: {analysis_result['confidence']}"
-    return report
+# src/multiagent/agents/report_agent.py
+def generate_report(query: str, analysis: str) -> dict:
+    """Генерация отчета по результатам анализа."""
+    return {
+        "query": query,
+        "report": f"Отчет по запросу '{query}': {analysis}",
+        "insights": ["LLM сгенерировала инсайт", "Можно улучшить промпт"],
+        "confidence": 0.85  # условно, можно считать уверенность через метрики
+    }

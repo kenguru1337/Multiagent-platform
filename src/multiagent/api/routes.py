@@ -1,11 +1,16 @@
+# src/multiagent/api/routes.py
 from fastapi import APIRouter
-from .schemas import QueryRequest, QueryResponse
-from ..agents.orchestrator import run_pipeline
+from src.multiagent.api.schemas import QueryRequest, QueryResponse
+from src.multiagent.agents.orchestrator import process_query
 
 router = APIRouter()
 
 
+@router.get("/health")
+async def health_check():
+    return {"status": "ok"}
+
+
 @router.post("/process", response_model=QueryResponse)
-def process_query(request: QueryRequest):
-    result = run_pipeline(request.query)
-    return result
+async def process_query_route(request: QueryRequest):
+    return process_query(request.query)

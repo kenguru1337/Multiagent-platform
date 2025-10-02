@@ -1,16 +1,7 @@
+# src/multiagent/api/main.py
 from fastapi import FastAPI
-from .routes import router
+from src.multiagent.api.routes import router
 
-app = FastAPI(
-    title="MultiAgent Platform API",
-    version="0.1",
-    description="Мультиагентная система для анализа и генерации отчётов"
-)
+app = FastAPI(title="Multiagent Platform with LLM")
 
-# Роуты
 app.include_router(router)
-
-
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
